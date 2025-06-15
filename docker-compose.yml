@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: colegio_postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: diego
+      POSTGRES_PASSWORD: hola123
+      POSTGRES_DB: colegio_optometrista
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  postgres_data:
