@@ -9,7 +9,7 @@ export class CmsService {
 
   constructor(private readonly configService: ConfigService) {
     this.s3Client = new S3Client({
-      region: this.configService.getOrThrow('AWS_S3_REGION'),
+       region: this.configService.get('AWS_S3_REGION') ?? 'us-east-2',
     });
   }
 }
